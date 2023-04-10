@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './pages/App/App';
+import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import "@popperjs/core"; 
+import "bootstrap";
 // Import the top-level BrowserRouter component
 import { BrowserRouter as Router } from 'react-router-dom';
 

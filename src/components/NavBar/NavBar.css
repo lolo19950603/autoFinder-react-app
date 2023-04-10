@@ -1,0 +1,11 @@
+.navbar {
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 2em;
+	border: none;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25em;
+  letter-spacing: 3px;
+}
