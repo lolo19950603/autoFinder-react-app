@@ -21,7 +21,14 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-// Put API routes here, before the "catch all" route
+// Mount Custom Middleware
+app.use(require('./config/checkToken'))
+
+// API routes here
+app.use('/api/users', require('./routes/api/users'))
+const isLoggedIn = require('./config/isLoggedIn');
+
+// app.use('/api/transactions', isLoggedIn, require('./routes/api/transactions'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

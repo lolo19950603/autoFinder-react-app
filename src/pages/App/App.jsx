@@ -1,13 +1,15 @@
 import ProfilePage from "../ProfilePage/ProfilePage";
-import AuthPage from "../AuthPage/AuthPage";
+import SignInPage from "../SignInPage/SignInPage";
+import SignUpPage from "../SignUpPage/SignUpPage";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
 import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from 'react-router-dom';
+import { getUser } from "../../utilities/services/users";
 
 export default function App() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(getUser());
   return (
     <main className="App">
       <NavBar user={user} setUser={setUser}/>
@@ -22,7 +24,8 @@ export default function App() {
         <>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/signin" element={<AuthPage setUser={setUser}/>} />
+            <Route path="/signin" element={<SignInPage setUser={setUser}/>} />
+            <Route path="/signup" element={<SignUpPage setUser={setUser}/>} />
           </Routes>
         </>
       )}
