@@ -27,7 +27,7 @@ export default function NavBar({ user, setUser }) {
               <Link className="nav-link active" to="/about">ABOUT</Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggle active" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 ACCOUNT
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -45,9 +45,32 @@ export default function NavBar({ user, setUser }) {
                 )}
               </ul>
             </li>
+            <li className="nav-item">
+              {user? (<span className="nav-link" to="/about">Welcome, {user.name}</span>):(<></>)}
+            </li>
           </ul>
           <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Start Search!" aria-label="Search" />
+          <select className="btn btn-outline-dark" name="year" id="year" defaultValue={'DEFAULT'}>
+              <option value="DEFAULT">Year</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+            </select>
+            <select className="btn btn-outline-dark" name="make" id="make" defaultValue={'DEFAULT'}>
+              <option value="DEFAULT">Make</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <select className="btn btn-outline-dark" name="model" id="model" defaultValue={'DEFAULT'}>
+              <option value="DEFAULT">Model</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
             <button className="btn btn-outline-dark" type="submit">Search</button>
           </form>
         </div>
@@ -55,23 +78,3 @@ export default function NavBar({ user, setUser }) {
     </nav>
   );
 }
-
-// {user ? (
-//   <>
-//     <Link to="/">
-//       Home
-//     </Link>
-//     <Link to="/account">
-//     My Account
-//     </Link>
-//   </>
-// ) : (
-//   <>
-//     <Link to="/">
-//       Home
-//     </Link>
-//     <Link to="/login">
-//       Login
-//     </Link>
-//   </>
-// )}

@@ -26,6 +26,7 @@ app.use(require('./config/checkToken'))
 
 // API routes here
 app.use('/api/users', require('./routes/api/users'))
+app.use('/api/cars', require('./routes/api/cars'));
 const isLoggedIn = require('./config/isLoggedIn');
 
 // app.use('/api/transactions', isLoggedIn, require('./routes/api/transactions'));
