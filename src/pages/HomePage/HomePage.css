@@ -1,5 +1,24 @@
 .HomePage {
-    font-family: 'Montserrat', sans-serif;
-	margin-top: 2em;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2em;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr;
+  background-color: var(--white);
+  border-radius: 2vmin;
 }
+
+@media only screen and (max-width: 1250px) {
+    .HomePage {
+        grid-template-columns: 1fr 5fr;
+    }
+  }
+
+.HomePage aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vmin 2vmin;
+  }
